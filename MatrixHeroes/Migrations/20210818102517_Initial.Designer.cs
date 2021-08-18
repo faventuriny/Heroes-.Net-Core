@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MatrixHeroes.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210818100134_Initial")]
+    [Migration("20210818102517_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -212,13 +212,15 @@ namespace MatrixHeroes.Migrations
                         {
                             Id = "b74ddd14-6340-4840-95c2-db12554843e5",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0527e8bf-b0ef-4a71-b764-b51ff09eb198",
+                            ConcurrencyStamp = "5edaeab3-aa1e-4efe-ae6c-1abf94e7393a",
                             Email = "israel@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
-                            PasswordHash = "AQAAAAEAACcQAAAAEIQZPy2UMD6y2u/G7euDZ+6ZTK4RnZBSGLpYChDo4giPfrXIrqbIGVAvQvrFXIR4zA==",
+                            NormalizedEmail = "ISRAEL@GMAIL.COM",
+                            NormalizedUserName = "ISRAEL",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFW39VHtJIvuV9cEiXb7/yr95TryZZaelwq8Bg7CITnpuFjaZ4JX8ndN5SZJQ6Gnmw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "54c88ec2-dcba-41c1-a3fe-4620f524e7a1",
+                            SecurityStamp = "863bd5c4-d571-43e9-b870-3e9ce2a90b0d",
                             TwoFactorEnabled = false,
                             UserName = "Israel"
                         });

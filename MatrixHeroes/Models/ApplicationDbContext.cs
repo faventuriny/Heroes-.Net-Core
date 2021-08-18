@@ -28,7 +28,9 @@ namespace MatrixHeroes.Data
             {
                 Id = "b74ddd14-6340-4840-95c2-db12554843e5",
                 UserName = "Israel",
+                NormalizedUserName = "ISRAEL",
                 Email = "israel@gmail.com",
+                NormalizedEmail = "ISRAEL@GMAIL.COM",
                 EmailConfirmed = true
             };
 

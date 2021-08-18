@@ -176,7 +176,7 @@ namespace MatrixHeroes.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "b74ddd14-6340-4840-95c2-db12554843e5", 0, "0527e8bf-b0ef-4a71-b764-b51ff09eb198", "israel@gmail.com", true, false, null, null, null, "AQAAAAEAACcQAAAAEIQZPy2UMD6y2u/G7euDZ+6ZTK4RnZBSGLpYChDo4giPfrXIrqbIGVAvQvrFXIR4zA==", null, false, "54c88ec2-dcba-41c1-a3fe-4620f524e7a1", false, "Israel" });
+                values: new object[] { "b74ddd14-6340-4840-95c2-db12554843e5", 0, "5edaeab3-aa1e-4efe-ae6c-1abf94e7393a", "israel@gmail.com", true, false, null, "ISRAEL@GMAIL.COM", "ISRAEL", "AQAAAAEAACcQAAAAEFW39VHtJIvuV9cEiXb7/yr95TryZZaelwq8Bg7CITnpuFjaZ4JX8ndN5SZJQ6Gnmw==", null, false, "863bd5c4-d571-43e9-b870-3e9ce2a90b0d", false, "Israel" });
 
             migrationBuilder.InsertData(
                 table: "Heroes",
