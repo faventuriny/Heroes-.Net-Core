@@ -1,6 +1,6 @@
 # MatrixHeroes-ServerSide
 
-## The firest time you download the project run the following commands: 
+## The first time you download the project run the following commands: 
 Run `cd ./MatrixHeroes`
 
 Run `dotnet tool install --global dotnet-ef`
