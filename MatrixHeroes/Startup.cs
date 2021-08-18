@@ -14,6 +14,7 @@ using Microsoft.Extensions.Configuration;
 using MatrixHeroes.Data;
 using MatrixHeroes.Auth;
 using MatrixHeroes.Controllers;
+using MatrixHeroes.Models;
 
 namespace MatrixHeroes
 {
@@ -43,7 +44,7 @@ namespace MatrixHeroes
                     Configuration.GetConnectionString("DefaultConnection")
                 ));
 
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddDefaultIdentity<Trainer>(options => options.SignIn.RequireConfirmedAccount = true)
                         .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.Configure<JwtConfig>(Configuration.GetSection("JwtConfig"));

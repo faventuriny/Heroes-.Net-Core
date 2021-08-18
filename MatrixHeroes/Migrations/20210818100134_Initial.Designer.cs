@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MatrixHeroes.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210817134030_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20210818100134_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -61,60 +61,89 @@ namespace MatrixHeroes.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Heroes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Ability = "Expert tactician and thief Psionic ability to manipulate weather patterns over vast area Control atmospheric pressure Temperature modification Ecological empathy Flight Lightning manipulation Immunity to lightning Limited immunity to extreme cold and heat Aerial adaptation",
+                            CurrentPower = 40.6m,
+                            DateStarted = new DateTime(2019, 5, 21, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            HowManyTimesTrainedToday = 0,
+                            LastTimeTrain = new DateTime(2021, 8, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Storm",
+                            StartingPower = 12.40m,
+                            SuitColor = "Black",
+                            TrainerID = "b74ddd14-6340-4840-95c2-db12554843e5"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Ability = "Possesses the powers of flight, superhuman strength, x-ray vision, heat vision, cold breath, super-speed, enhanced hearing, and nigh-invulnerability",
+                            CurrentPower = 184.67m,
+                            DateStarted = new DateTime(2015, 6, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            HowManyTimesTrainedToday = 0,
+                            LastTimeTrain = new DateTime(2021, 8, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Super Man",
+                            StartingPower = 20.61m,
+                            SuitColor = "Blue and Red",
+                            TrainerID = "b74ddd14-6340-4840-95c2-db12554843e5"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Ability = "Superhuman strength and reflexes, enhanced senses and tracking abilities, and a special healing power that also slows his aging",
+                            CurrentPower = 185.33m,
+                            DateStarted = new DateTime(2016, 6, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            HowManyTimesTrainedToday = 0,
+                            LastTimeTrain = new DateTime(2021, 8, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Wolverine",
+                            StartingPower = 15.23m,
+                            SuitColor = "Yellow and Blue",
+                            TrainerID = "b74ddd14-6340-4840-95c2-db12554843e5"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Ability = "Super strength and super speed. She can also fly, manifest wings of fire, and project fire vision.",
+                            CurrentPower = 7.56m,
+                            DateStarted = new DateTime(2020, 8, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            HowManyTimesTrainedToday = 0,
+                            LastTimeTrain = new DateTime(2021, 8, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Super Girl",
+                            StartingPower = 7.00m,
+                            SuitColor = "Blue and Red",
+                            TrainerID = "b74ddd14-6340-4840-95c2-db12554843e5"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Ability = "Superhuman Agility, Stamina, Durability, Reflexes and Strength",
+                            CurrentPower = 201.5m,
+                            DateStarted = new DateTime(2014, 7, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            HowManyTimesTrainedToday = 0,
+                            LastTimeTrain = new DateTime(2021, 8, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Captain America",
+                            StartingPower = 100.18m,
+                            SuitColor = "Blue, Red and White",
+                            TrainerID = "b74ddd14-6340-4840-95c2-db12554843e5"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Ability = "Regeneration Extended longevity Skilled marksman, swordsman, and hand-to-hand combatant Using devices granting teleportation and holographic disguise Superhuman strength, durability, and agility",
+                            CurrentPower = 19.60m,
+                            DateStarted = new DateTime(2020, 5, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            HowManyTimesTrainedToday = 0,
+                            LastTimeTrain = new DateTime(2021, 8, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "Deadpool",
+                            StartingPower = 8.45m,
+                            SuitColor = "Red and Black",
+                            TrainerID = "b74ddd14-6340-4840-95c2-db12554843e5"
+                        });
                 });
 
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("NormalizedName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NormalizedName")
-                        .IsUnique()
-                        .HasDatabaseName("RoleNameIndex")
-                        .HasFilter("[NormalizedName] IS NOT NULL");
-
-                    b.ToTable("AspNetRoles");
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("ClaimType")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ClaimValue")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("RoleId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RoleId");
-
-                    b.ToTable("AspNetRoleClaims");
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
+            modelBuilder.Entity("MatrixHeroes.Models.Trainer", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -177,6 +206,73 @@ namespace MatrixHeroes.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "b74ddd14-6340-4840-95c2-db12554843e5",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "0527e8bf-b0ef-4a71-b764-b51ff09eb198",
+                            Email = "israel@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            PasswordHash = "AQAAAAEAACcQAAAAEIQZPy2UMD6y2u/G7euDZ+6ZTK4RnZBSGLpYChDo4giPfrXIrqbIGVAvQvrFXIR4zA==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "54c88ec2-dcba-41c1-a3fe-4620f524e7a1",
+                            TwoFactorEnabled = false,
+                            UserName = "Israel"
+                        });
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("AspNetRoles");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RoleId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetRoleClaims");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -274,7 +370,7 @@ namespace MatrixHeroes.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("MatrixHeroes.Models.Trainer", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -283,7 +379,7 @@ namespace MatrixHeroes.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("MatrixHeroes.Models.Trainer", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -298,7 +394,7 @@ namespace MatrixHeroes.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("MatrixHeroes.Models.Trainer", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -307,7 +403,7 @@ namespace MatrixHeroes.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("MatrixHeroes.Models.Trainer", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)

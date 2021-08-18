@@ -1,5 +1,6 @@
 ﻿using MatrixHeroes.Auth;
 using MatrixHeroes.Configuration;
+using MatrixHeroes.Models;
 using MatrixHeroes.Models.Dtos.Requests;
 using MatrixHeroes.Models.Dtos.Responses;
 using Microsoft.AspNetCore.Identity;
@@ -17,11 +18,11 @@ namespace MatrixHeroes.Controllers
 {
     public class AuthService : IAuthRepo
     {
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly UserManager<Trainer> _userManager;
         private readonly JwtConfig _jwtConfig;
 
         public AuthService(
-            UserManager<IdentityUser> userManager,
+            UserManager<Trainer> userManager,
             IOptionsMonitor<JwtConfig> optionsMonitor)
         {
             _userManager = userManager;
@@ -40,7 +41,7 @@ namespace MatrixHeroes.Controllers
                     Success = false
                 };
             };
-            var newUser = new IdentityUser() { Email = user.Email, UserName = user.UserName };
+            var newUser = new Trainer() { Email = user.Email, UserName = user.UserName };
             var isCreated = await _userManager.CreateAsync(newUser, user.Password);
             if (isCreated.Succeeded)
             {
